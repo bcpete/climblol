@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <title th:text="${title}">Title</title>
+</head>
+<body>
+    <form th:object="${user}" method="post">
+        <div class="form-group">
+            <label th:for="username">UserName</label>
+            <input th:field="*{username}" />
+            <span th:errors="*{username}" class="error"></span>
+        </div>
+    </form>
+</body>
+</html>
