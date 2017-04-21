@@ -16,7 +16,7 @@ public class UserType {
     private int id;
 
     @NotNull
-    private String type;
+    private String name;
 
     @OneToMany
     @JoinColumn(name="usertype_id")
@@ -24,12 +24,12 @@ public class UserType {
 
     public UserType(){}
 
-    public UserType(String type) {
-        this.type = type;
+    public String getName() {
+        return name;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getId() {

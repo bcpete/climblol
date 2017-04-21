@@ -31,9 +31,8 @@ public class User {
     @ManyToOne
     private Role role;
 
-    @OneToMany
-    @JoinColumn(name="mainchamp_id")
-    private ArrayList<MainChamp> mainChamps = new ArrayList<>();
+    @ManyToMany(mappedBy="users")
+    private List<MainChamp> mainChamps;
 
     @NotNull
     private String password;
@@ -68,6 +67,14 @@ public class User {
         this.aboutMe = aboutMe;
     }
 
+    public String getUserRank() {
+        return userRank;
+    }
+
+    public void setUserRank(String userRank) {
+        this.userRank = userRank;
+    }
+
     public String getUsername() {
         return username;
     }
@@ -92,11 +99,11 @@ public class User {
         this.role = role;
     }
 
-    public ArrayList<MainChamp> getMainChamps() {
+    public List<MainChamp> getMainChamps() {
         return mainChamps;
     }
 
-    public void setMainChamps(ArrayList<MainChamp> mainChamps) {
+    public void setMainChamps(List<MainChamp> mainChamps) {
         this.mainChamps = mainChamps;
     }
 
@@ -138,21 +145,5 @@ public class User {
 
     public void setAboutMe(String aboutMe) {
         this.aboutMe = aboutMe;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void addChamp(MainChamp mainChamp){
-        mainChamps.add(mainChamp);
-    }
-
-    public String getUserRank() {
-        return userRank;
-    }
-
-    public void setUserRank(String userRank) {
-        this.userRank = userRank;
     }
 }

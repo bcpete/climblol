@@ -18,7 +18,7 @@ public class Server {
 
     @NotNull
     @Size(min=2, max=4)
-    public String server;
+    public String name;
 
     @OneToMany
     @JoinColumn(name="server_id")
@@ -27,16 +27,12 @@ public class Server {
     public Server() {
     }
 
-    public Server(String server) {
-        this.server = server;
+    public String getName() {
+        return name;
     }
 
-    public String getServer() {
-        return server;
-    }
-
-    public void setServer(String server) {
-        this.server = server;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getId() {

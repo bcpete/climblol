@@ -6,10 +6,72 @@
 <body>
     <form th:object="${user}" method="post">
         <div class="form-group">
+            <label th:for="username">UserName (Same as your league name)</label>
+            <input th:field="*{username}" />
+            <span th:errors="*{username}" class="error"></span>
+        </div>
+        <div class="form-group">
+            <label th:for="password">Password (Different from your league password)</label>
+            <input th:field="*{password}" type="password" />
+            <span th:errors="*{password}" class="error"></span>
+        </div>
+        <div class="form-group">
+            <label th:for="userRank">Rank</label>
+            <select th:name="userRank">
+                <option value="bronze">Bronze</option>
+                <option value="silver">Silver</option>
+                <option value="gold">Gold</option>
+                <option value="platinum">Platinum</option>
+                <option value="diamond">Diamond</option>
+                <option value="master">Master</option>
+                <option value="challenger">Challenger</option>
+            </select>
+        </div>
+        <div class="form-group">
             <label th:for="username">UserName</label>
             <input th:field="*{username}" />
             <span th:errors="*{username}" class="error"></span>
         </div>
+        <div class="form-group">
+            <label th:for="opGGLink">OP.GG Link</label>
+            <input th:field="*{opGGLink}" />
+            <span th:errors="*{opGGLink}" class="error"></span>
+        </div>
+        <div class="form-group">
+            <label th:for="discordLink">Discord Link</label>
+            <input th:field="*{discordLink}" />
+            <span th:errors="*{discordLink}" class="error"></span>
+        </div>
+        <div class="form-group">
+            <label th:for="aboutMe">About Me (availability, when you play, etc.)</label>
+            <textarea th:field="*{aboutMe}" />
+            <span th:errors="*{aboutMe}" class="error"></span>
+        </div>
+        <div class="form-group">
+            <label th:for="type">Role</label>
+            <select th:name="userTypeId">
+                <option th:each="userType : ${types}"
+                        th:text="${userType.name}"
+                        th:value="${userType.id}"></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label th:for="server">Server</label>
+            <select th:name="serverId">
+                <option th:each="server : ${servers}"
+                        th:text="${server.name}"
+                        th:value="${server.id}"></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label th:for="role">Position</label>
+            <select th:name="roleId">
+                <option th:each="role : ${roles}"
+                        th:text="${role.name}"
+                        th:value="${role.id}"></option>
+            </select>
+        </div>
+        <input type="submit"/>
     </form>
 </body>
 </html>

@@ -16,7 +16,7 @@ public class Role {
     private int id;
 
     @NotNull
-    private String position;
+    private String name;
 
     @OneToMany
     @JoinColumn(name="role_id")
@@ -25,16 +25,12 @@ public class Role {
     public Role() {
     }
 
-    public Role(String position) {
-        this.position = position;
+    public String getName() {
+        return name;
     }
 
-    public String getPosition() {
-        return position;
-    }
-
-    public void setPosition(String position) {
-        this.position = position;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getId() {
