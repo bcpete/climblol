@@ -19,7 +19,8 @@ public class User {
     private int id;
 
     @NotNull
-    private String userRank;
+    @ManyToOne
+    private  UserRank userRank;
 
     @NotNull
     @Size(min = 3)
@@ -53,7 +54,7 @@ public class User {
     public User() {
     }
 
-    public User(String username, Server server, Role role, ArrayList<MainChamp> mainChamps,
+    public User(String username, Server server, Role role, List<MainChamp> mainChamps,
                 String password, String opGGLink, String discordLink, UserType userType,
                 String aboutMe) {
         this.username = username;
@@ -67,11 +68,11 @@ public class User {
         this.aboutMe = aboutMe;
     }
 
-    public String getUserRank() {
+    public UserRank getUserRank() {
         return userRank;
     }
 
-    public void setUserRank(String userRank) {
+    public void setUserRank(UserRank userRank) {
         this.userRank = userRank;
     }
 

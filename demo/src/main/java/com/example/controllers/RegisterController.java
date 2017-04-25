@@ -2,9 +2,7 @@ package com.example.controllers;
 
 import com.example.models.Role;
 import com.example.models.User;
-import com.example.models.data.RoleDao;
-import com.example.models.data.ServerDao;
-import com.example.models.data.UserTypeDao;
+import com.example.models.data.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,6 +25,15 @@ public class RegisterController {
     @Autowired
     private RoleDao roleDao;
 
+    @Autowired
+    private UserRankDao userRankDao;
+
+    @Autowired
+    private UserDao userDao;
+
+    @Autowired
+    private MainChampDao mainChampDao;
+
     @RequestMapping(value="", method = RequestMethod.GET)
     public String displayRegisterForm(Model model){
         model.addAttribute(new User());
@@ -34,6 +41,8 @@ public class RegisterController {
         model.addAttribute("types", userTypeDao.findAll());
         model.addAttribute("servers", serverDao.findAll());
         model.addAttribute("roles", roleDao.findAll());
+        model.addAttribute("userranks", userRankDao.findAll());
+        model.addAttribute("mainchamps", mainChampDao.findAll());
 
         return "register";
     }
