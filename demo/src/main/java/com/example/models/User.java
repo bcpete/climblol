@@ -18,12 +18,11 @@ public class User {
     @GeneratedValue
     private int id;
 
-    @NotNull
     @ManyToOne
     private  UserRank userRank;
 
     @NotNull
-    @Size(min = 3)
+    @Size(min = 3, message="Username must be at least 3 characters long")
     private String username;
 
     @ManyToOne
@@ -36,19 +35,22 @@ public class User {
     private List<MainChamp> mainChamps;
 
     @NotNull
+    @Size(min=6, message="Password must be at least 6 characters long")
     private String password;
 
     @NotNull
+    @Size(min=1,message="Please enter your op.gg link")
     private String opGGLink;
 
     @NotNull
+    @Size(min=1,message="Please enter your discord link")
     private String discordLink;
 
     @ManyToOne
     private UserType userType;
 
     @NotNull
-    @Size(max = 500)
+    @Size(min= 1, max = 500, message="About me can't be blank")
     private String aboutMe;
 
     public User() {
@@ -147,4 +149,10 @@ public class User {
     public void setAboutMe(String aboutMe) {
         this.aboutMe = aboutMe;
     }
+
+    public void addMainChamp(MainChamp newChamp){
+        mainChamps.add(newChamp);
+    }
+
+
 }

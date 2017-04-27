@@ -45,4 +45,8 @@ public class MainChamp {
     public void setUsers(List<User> users) {
         this.users = users;
     }
+
+    public void addUser(User newUser){
+        users.add(newUser);
+    }
 }

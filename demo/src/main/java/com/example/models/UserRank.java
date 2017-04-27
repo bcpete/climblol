@@ -20,7 +20,7 @@ public class UserRank {
 
     @OneToMany
     @JoinColumn(name="userrank_id")
-    private List<User> users = new ArrayList<>();
+    private List<User> users;
 
     public UserRank() {
     }
@@ -35,5 +35,9 @@ public class UserRank {
 
     public int getId() {
         return id;
+    }
+
+    public void addUser(User user){
+        users.add(user);
     }
 }

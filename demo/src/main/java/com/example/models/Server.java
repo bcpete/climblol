@@ -22,7 +22,7 @@ public class Server {
 
     @OneToMany
     @JoinColumn(name="server_id")
-    private List<User> users = new ArrayList<>();
+    private List<User> users;
 
     public Server() {
     }
@@ -37,5 +37,9 @@ public class Server {
 
     public int getId() {
         return id;
+    }
+
+    public void addUser(User user){
+        users.add(user);
     }
 }

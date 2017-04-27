@@ -20,7 +20,7 @@ public class UserType {
 
     @OneToMany
     @JoinColumn(name="usertype_id")
-    private List<User> users = new ArrayList<>();
+    private List<User> users;
 
     public UserType(){}
 
@@ -34,5 +34,9 @@ public class UserType {
 
     public int getId() {
         return id;
+    }
+
+    public void addUser(User user){
+        users.add(user);
     }
 }

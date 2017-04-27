@@ -20,7 +20,7 @@ public class Role {
 
     @OneToMany
     @JoinColumn(name="role_id")
-    private List<User> users = new ArrayList<>();
+    private List<User> users;
 
     public Role() {
     }
@@ -35,5 +35,9 @@ public class Role {
 
     public int getId() {
         return id;
+    }
+
+    public void addUser(User user){
+        users.add(user);
     }
 }
