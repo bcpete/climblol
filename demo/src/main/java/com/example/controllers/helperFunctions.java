@@ -20,7 +20,7 @@ public class helperFunctions {
             ResultSet r1 = st.executeQuery();
             if(r1.next()){
                 int check = r1.getInt("total");
-                if(check>1){
+                if(check>0){
                     return true;
                 }
             }else{

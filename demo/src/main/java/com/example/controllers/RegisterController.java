@@ -102,6 +102,6 @@ public class RegisterController {
         userDao.save(newUser);
 
 
-        return "home";
+        return "redirect:/profile/{username}";
     }
 }
