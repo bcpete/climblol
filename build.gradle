@@ -6,12 +6,13 @@ buildscript {
 		mavenCentral()
 	}
 	dependencies {
-		compile("org.springframework.boot:spring-boot-starter-security")
+		//classpath("org.springframework.boot:spring-boot-starter-security")
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-		classpath 'com.android.tools.build:gradle:2.2.2'
-		classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7'
+		//classpath 'com.android.tools.build:gradle:2.2.2'
+		//classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7'
 	}
 
+/*
 	jar {
 		baseName = 'gs-securing-web'
 		version =  '0.1.0'
@@ -26,16 +27,17 @@ buildscript {
 		}
 	}
 
+    */
 }
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
-apply plugin: 'idea'
-apply plugin: 'org.springframework.boot'
+//apply plugin: 'idea'
+//apply plugin: 'org.springframework.boot'
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+//sourceCompatibility = 1.8
+//targetCompatibility = 1.8
 
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
@@ -48,15 +50,15 @@ bootRun{
 	addResources = true
 }
 
-
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
-	compile("org.springframework.boot:spring-boot-starter-security")
+	//compile("org.springframework.boot:spring-boot-starter-security")
+    compile 'org.springframework.security:spring-security-web:4.2.2.RELEASE'
 	compile('mysql:mysql-connector-java')
 	runtime('org.springframework.boot:spring-boot-devtools')
-	testCompile("junit:junit")
+	//testCompile("junit:junit")
 	testCompile('org.springframework.boot:spring-boot-starter-test')
-	testCompile("org.springframework.security:spring-security-test")
+	//testCompile("org.springframework.security:spring-security-test")
 }
