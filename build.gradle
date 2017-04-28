@@ -9,7 +9,7 @@ buildscript {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
 		classpath 'com.android.tools.build:gradle:2.2.2'
 		classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7'
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.2.RELEASE")
+		compile("org.springframework.boot:spring-boot-starter-security")
 	}
 
 	jar {
@@ -53,6 +53,7 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile("org.springframework.boot:spring-boot-starter-security")
 	compile('mysql:mysql-connector-java')
 	runtime('org.springframework.boot:spring-boot-devtools')
 	testCompile("junit:junit")
