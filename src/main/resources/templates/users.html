@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title th:text="${title}">Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<table class="table">
+    <tr>
+        <th>Server</th>
+        <th>Rank</th>
+        <th>UserName</th>
+        <th>Main Champs</th>
+    </tr>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.server.name}"></td>
+        <td th:text="${user.userRank.name}"></td>
+        <td th:text="${user.username}"></td>
+        <td><span th:each="champ : ${user.mainChamps}"><img th:src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/${champ.name}.png"/></span></td>
+    </tr>
+</table>
+</body>
+</html>
