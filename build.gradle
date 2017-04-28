@@ -6,10 +6,10 @@ buildscript {
 		mavenCentral()
 	}
 	dependencies {
+		compile("org.springframework.boot:spring-boot-starter-security")
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
 		classpath 'com.android.tools.build:gradle:2.2.2'
 		classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7'
-		compile("org.springframework.boot:spring-boot-starter-security")
 	}
 
 	jar {
