@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/climblol.iml" filepath="$PROJECT_DIR$/climblol.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/climblol.iml" filepath="$PROJECT_DIR$/.idea/modules/climblol.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/climblol_main.iml" filepath="$PROJECT_DIR$/.idea/modules/climblol_main.iml" group="climblol" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/climblol_test.iml" filepath="$PROJECT_DIR$/.idea/modules/climblol_test.iml" group="climblol" />
     </modules>
   </component>
 </project>
