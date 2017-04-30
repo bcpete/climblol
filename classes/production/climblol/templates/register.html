@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <title th:text="${title}">Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"/>
+</head>
+<body>
+<div th:object="${user}">
+    <table border="1" width="100%" ID="Table2" style="margin: 0px;">
+        <tr>
+            <td th:if="${userused}" align="center" class="alert alert-danger" role="alert" th:text="${userused}"></td>
+        </tr>
+        <tr>
+            <td align="center" class="alert alert-danger" role="alert" th:errors="*{username}"></td>
+        </tr>
+        <tr>
+            <td align="center" class="alert alert-danger" role="alert" th:errors="*{password}"></td>
+        </tr>
+        <tr>
+            <td align="center" class="alert alert-danger" role="alert" th:errors="*{userRank}"></td>
+        </tr>
+        <tr>
+            <td align="center" class="alert alert-danger" role="alert" th:errors="*{opGGLink}"></td>
+        </tr>
+        <tr>
+            <td align="center" class="alert alert-danger" role="alert" th:errors="*{discordLink}"></td>
+        </tr>
+        <tr>
+            <td align="center" class="alert alert-danger" role="alert" th:errors="*{aboutMe}"></td>
+        </tr>
+        <tr>
+            <td align="center" class="alert alert-danger" role="alert" th:errors="*{userType}"></td>
+        </tr>
+        <tr>
+            <td align="center" class="alert alert-danger" role="alert" th:errors="*{server}"></td>
+        </tr>
+        <tr>
+            <td align="center" class="alert alert-danger" role="alert" th:errors="*{role}"></td>
+        </tr>
+        <tr>
+            <td align="center" class="alert alert-danger" role="alert" th:errors="*{mainChamps}"></td>
+        </tr>
+    </table>
+</div>
+<div class="container-fluid text-center">
+    <form th:object="${user}" method="post">
+        <div class="form-inline">
+            <label class="sr-only" th:for="username"></label>
+            <input th:field="*{username}" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="League Name"/>
+            <label  class="sr-only" th:for="password"></label>
+            <input th:field="*{password}" type="password" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="Password"/>
+        </div>
+        <div class="form-group">
+            <label th:for="userRank">Rank</label>
+            <select th:name="userRankId" class="form-control">
+                <option th:each="rank : ${userranks}"
+                        th:text="${rank.name}"
+                        th:value="${rank.id}"></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label th:for="opGGLink">OP.GG Link</label>
+            <input th:field="*{opGGLink}" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label th:for="discordLink">Discord Link</label>
+            <input th:field="*{discordLink}" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label th:for="aboutMe">About Me (availability, when you play, etc.)</label>
+            <textarea th:field="*{aboutMe}" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label th:for="type">Role</label>
+            <select th:name="userTypeId" class="form-control">
+                <option th:each="userType : ${types}"
+                        th:text="${userType.name}"
+                        th:value="${userType.id}"></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label th:for="server">Server</label>
+            <select th:name="serverId" class="form-control">
+                <option th:each="server : ${servers}"
+                        th:text="${server.name}"
+                        th:value="${server.id}"></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label th:for="role">Position</label>
+            <select th:name="roleId" class="form-control">
+                <option th:each="role : ${roles}"
+                        th:text="${role.name}"
+                        th:value="${role.id}"></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label th:for="mainchamp">Most Played Champs</label>
+            <select th:name="mainChampId" class="form-control">
+                <option th:each="champ : ${mainchamps}"
+                        th:text="${champ.name}"
+                        th:value="${champ.id}"></option>
+            </select>
+            <select th:name="mainChampId" class="form-control">
+                <option th:each="champ : ${mainchamps}"
+                        th:text="${champ.name}"
+                        th:value="${champ.id}"></option>
+            </select>
+            <select th:name="mainChampId" class="form-control">
+                <option th:each="champ : ${mainchamps}"
+                        th:text="${champ.name}"
+                        th:value="${champ.id}"></option>
+            </select>
+        </div>
+        <input type="submit"/>
+    </form>
+</div>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</body>
+</html>

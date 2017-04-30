@@ -15,7 +15,7 @@
     </tr>
     <tr th:each="user : ${users}">
         <td th:text="${user.server.name}"></td>
-        <td><img th:src="|/images/${user.userRank.name}.png|" alt="" height="80px" width="80px"/></td>
+        <td><img th:src="@{|/images/${user.userRank.name}.png|}" alt="" height="80px" width="80px"/></td>
         <td th:text="${user.username}"></td>
         <td><span th:each="champ : ${user.mainChamps}"><img th:src="|http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/${champ.name}.png|" alt="" height="60px" width="60px"/></span></td>
     </tr>
