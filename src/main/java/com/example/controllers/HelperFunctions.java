@@ -14,7 +14,7 @@ public class HelperFunctions {
 
         try
         {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:8889/climblol", "climblol", "sasuke12");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://us-cdbr-iron-east-03.cleardb.net/heroku_1e1ce2cf1c1dbd1?reconnect=true", "ba632fb9696d8f", "8e291d93");
 
             PreparedStatement st = connection.prepareStatement("SELECT COUNT(*) AS total FROM user where username LIKE ?");
             st.setString(1, username);
