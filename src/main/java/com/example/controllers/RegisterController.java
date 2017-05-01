@@ -14,10 +14,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.validation.Valid;
 import java.util.List;
 
-import static com.example.controllers.HelperFunctions.checkUserNameIsUsed;
-
 /**
  * Created by Brady on 4/7/17.
+ * Handles requests to /register. First I create all of my DataAccessObject's, I have one for each class because I am going
+ * to be creating a new user. displayRegisterForm responds to a get request with the form for registering a new user.
+ * model.addAttribute passes all of the needed data into the Thymeleaf template.
  */
 @Controller
 @RequestMapping(value="register")
@@ -25,19 +26,14 @@ public class RegisterController {
 
     @Autowired
     private UserTypeDao userTypeDao;
-
     @Autowired
     private ServerDao serverDao;
-
     @Autowired
     private RoleDao roleDao;
-
     @Autowired
     private UserRankDao userRankDao;
-
     @Autowired
     private UserDao userDao;
-
     @Autowired
     private MainChampDao mainChampDao;
 
@@ -59,7 +55,7 @@ public class RegisterController {
                                       Errors errors, @RequestParam int roleId, @RequestParam int userRankId,
                                       @RequestParam int serverId, @RequestParam int userTypeId,
                                       @RequestParam(value="mainChampId") List<Integer> champArray){
-        if(checkUserNameIsUsed(newUser.getUsername())){
+        if(userDao.findByUsername(newUser.getUsername())!=null){
             model.addAttribute("userused", "Username is already taken");
             model.addAttribute("title", "Register");
             model.addAttribute("title","Register");
