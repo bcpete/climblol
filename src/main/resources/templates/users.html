@@ -5,23 +5,25 @@
     <title th:text="${title}">Title</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"/>
 </head>
-<body>
+<body style="  background-color: black;">
+<div class="container-fluid text-center">
 <table class="table table-bordered table-hover table-inverse">
     <tr>
-        <th>Server</th>
-        <th>Rank</th>
-        <th>UserName</th>
-        <th>Main Champs</th>
+        <th><h1>Server</h1></th>
+        <th><h1>Rank</h1></th>
+        <th><h1>UserName</h1></th>
+        <th><h1>Main Champs</h1></th>
     </tr>
     <tr th:each="user : ${users}">
-        <td th:text="${user.server.name}"></td>
-        <td><img th:src="|/images/${user.userRank.name}.png|" alt="" height="80px" width="80px"/></td>
-        <td th:text="${user.username}"></td>
-        <td><span th:each="champ : ${user.mainChamps}"><img th:src="|http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/${champ.name}.png|" alt="" height="60px" width="60px"/></span></td>
+        <td><h4 th:text="${user.server.name}"></h4></td>
+        <td><img th:src="|/images/${user.userRank.name}.png|" alt="" height="145px" width="145px"/></td>
+        <td><h4> <a th:href="'/' + ${user.username}" th:text="${user.username}" /></h4></td>
+        <td><span th:each="champ : ${user.mainChamps}"><img th:src="|http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/${champ.name}.png|" alt="" height="120px" width="120px"/></span></td>
     </tr>
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 </table>
+</div>
 </body>
 </html>
