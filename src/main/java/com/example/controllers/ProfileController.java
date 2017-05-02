@@ -22,7 +22,7 @@ public class ProfileController {
     @RequestMapping(value="", method= RequestMethod.GET)
     public String viewProfile(Model model, @PathVariable("username")String username){
 
-        User user = userDao.findByUsername(username);
+        User user = userDao.findByUsernameIgnoreCase(username);
 
         model.addAttribute(user);
         model.addAttribute("title", user.getUsername()+"'s Profile");

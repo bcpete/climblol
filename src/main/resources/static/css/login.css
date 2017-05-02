@@ -89,11 +89,16 @@
   color: #EF3B3A;
 }
 body {
-  background-image: url("/images/background5.jpg");
+  background-image: url("/images/background_login.jpg");
+  -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
   background-color: black;
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin:0;
+  padding:0;
 }

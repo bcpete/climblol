@@ -55,7 +55,7 @@ public class RegisterController {
                                       Errors errors, @RequestParam int roleId, @RequestParam int userRankId,
                                       @RequestParam int serverId, @RequestParam int userTypeId,
                                       @RequestParam(value="mainChampId") List<Integer> champArray){
-        if(userDao.findByUsername(newUser.getUsername())!=null){
+        if(userDao.findByUsernameIgnoreCase(newUser.getUsername())!=null){
             model.addAttribute("userused", "Username is already taken");
             model.addAttribute("title", "Register");
             model.addAttribute("title","Register");

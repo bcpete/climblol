@@ -3,8 +3,83 @@
 <head>
     <meta charset="UTF-8"/>
     <title th:text="${title}">Title</title>
+    <script src="/plugins/bootstrap-select.min.js"></script>
+    <script src="/codemirror/jquery.codemirror.js"></script>
+    <script src="/beautifier.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+            integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+            integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+            integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+            crossorigin="anonymous"></script>
+    <script src="http://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"/>
+    <link rel="stylesheet" href="/css/jintos.css" tpye="text/css"/>
 </head>
-<body>
+<body style="background-image: url(images/background_profile.jpg); background-repeat:no-repeat fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-size:175%;">
+<div th:replace="fragments :: navigation"></div>
+<hr/>
+<div class="container target">
+    <div class="row">
+        <div>
+            <div class="text-center" th:replace="fragments :: name"></div>
+            <br/>
+        </div>
+        <div class=" text-center">
+            <img th:src="|/images/${user.userRank.name}.png|" style="width:280px; height:280px;"/>
+        </div>
+        <hr/>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-sm-3">
+            <!--left col-->
+            <ul class="list-group text-center">
+                <li class="list-group-item text-muted"><h3 th:text="${user.userType.name}"></h3></li>
+                <li class="list-group-item text-muted"><h3 th:text="|Server: ${user.server.name}|"></h3></li>
+                <li class="list-group-item text-muted"><h3 th:text="|Discord Link: ${user.discordLink}|"></h3></li>
+                <li class="list-group-item text-muted"><h3 th:text="|Position: ${user.role.name}|"></h3></li>
+                <li class="list-group-item text-muted"><h3><u>Main Champions</u></h3><br/><span th:each="champ : ${user.mainChamps}"><img th:src="|http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/${champ.name}.png|" alt="" height="60px" width="60px"/></span></li>
+            </ul>
+            <div class="col-sm-15" contenteditable="false" style="">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2>About Me</h2>
+                    </div>
+                        <div style="color:black;" class="panel-body" th:text="${user.aboutMe}">
+                        </div>
+                </div>
+            </div>
+        </div>
+        <!--/col-3-->
+        <div class="col-sm-9" contenteditable="false" style="">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h1 th:text="|${user.username}'s op.gg|"></h1></div>
+                <div class="panel-body">
+                    <iframe th:src="|${user.opGGLink}|" width="800" height="1000"></iframe>
+                </div>
+            </div>
+        </div>
 
+
+        <div id="push"></div>
+    </div>
+
+    <!--<script src="/plugins/bootstrap-select.min.js"></script>
+    <script src="/codemirror/jquery.codemirror.js"></script>
+    <script src="/beautifier.js"></script>-->
+</div>
+<script src="/plugins/bootstrap-pager.js"></script>
 </body>
 </html>
