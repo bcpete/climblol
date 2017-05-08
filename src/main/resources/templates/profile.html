@@ -21,23 +21,19 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"/>
     <link rel="stylesheet" href="/css/jintos.css" tpye="text/css"/>
+    <link rel="stylesheet" href="/css/profile.css" tpye="text/css"/>
 </head>
-<body style="background-image: url(images/background_profile.jpg); background-repeat:no-repeat fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  font-size:175%;">
+<body id="body_e6e1_0">
 <div th:replace="fragments :: navigation"></div>
 <hr/>
 <div class="container target">
     <div class="row">
         <div>
-            <div class="text-center"><h1 style="font-size:300%;" th:text="${user.username}"></h1></div>
+            <div class="text-center"><h1 id="h1_e6e1_0" th:text="${user.username}"></h1></div>
             <br/>
         </div>
         <div class=" text-center">
-            <img th:src="|/images/${user.userRank.name}.png|" style="width:280px; height:280px;"/>
+            <img th:src="|/images/${user.userRank.name}.png|" id="img_e6e1_0"/>
         </div>
         <hr/>
     </div>
@@ -57,8 +53,8 @@
                     <div class="panel-heading">
                         <h2>About Me</h2>
                     </div>
-                        <div style="color:black;" class="panel-body" th:text="${user.aboutMe}">
-                        </div>
+                    <div id="div_e6e1_0" class="panel-body" th:text="${user.aboutMe}">
+                    </div>
                 </div>
             </div>
         </div>
@@ -75,10 +71,6 @@
 
         <div id="push"></div>
     </div>
-
-    <!--<script src="/plugins/bootstrap-select.min.js"></script>
-    <script src="/codemirror/jquery.codemirror.js"></script>
-    <script src="/beautifier.js"></script>-->
 </div>
 <script src="/plugins/bootstrap-pager.js"></script>
 </body>

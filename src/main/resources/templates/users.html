@@ -13,27 +13,29 @@
             crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
             integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
-            crossorigin="anonymous"></script></head>
-<body style="background-color: black;">
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/coaches.css"/>
+</head>
+<body id="body_736e_0">
 <div th:replace="fragments :: navigation"></div>
 <div class="container-fluid text-center">
-<table style="color:white;" class="table table-bordered table-inverse  mt-lg-3">
-    <tr>
-        <th class="text-center"><h1>Server</h1></th>
-        <th class="text-center"><h1>Rank</h1></th>
-        <th class="text-center"><h1>UserName</h1></th>
-        <th class="text-center"><h1>Main Champs</h1></th>
-    </tr>
-    <tr th:each="user : ${users}">
-        <td><h4 class="mt-lg-5" th:text="${user.server.name}"></h4></td>
-        <td><img th:src="|/images/${user.userRank.name}.png|" alt="" height="145px" width="145px"/></td>
+    <table  id="table_736e_0" class="table table-bordered table-inverse  mt-lg-3">
+        <tr>
+            <th class="text-center"><h1>Server</h1></th>
+            <th class="text-center"><h1>Rank</h1></th>
+            <th class="text-center"><h1>UserName</h1></th>
+            <th class="text-center"><h1>Main Champs</h1></th>
+        </tr>
+        <tr th:each="user : ${users}">
+            <td><h4 class="mt-lg-5" th:text="${user.server.name}"></h4></td>
+            <td><img th:src="|/images/${user.userRank.name}.png|" alt="" height="145px" width="145px"/></td>
             <td><h4 class="mt-lg-5"> <a th:href="'/' + ${user.username}" th:text="${user.username}" /></h4></td>
-        <td><span th:each="champ : ${user.mainChamps}"><img th:src="|http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/${champ.name}.png|" alt="" height="120px" width="120px"/></span></td>
-    </tr>
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-</table>
+            <td><span th:each="champ : ${user.mainChamps}"><img th:src="|http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/${champ.name}.png|" alt="" height="120px" width="120px"/></span></td>
+        </tr>
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    </table>
 </div>
 </body>
 </html>

@@ -3,11 +3,12 @@
 <head>
     <title th:text="${title}">Title</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="/css/register.css"/>
 </head>
-<body style="background-image: url('/images/register_background.png'); color:white;">
+<body id="body_70c2_0">
 <div th:replace="fragments :: navigation"></div>
 <div th:object="${user}">
-    <table border="1" width="100%" ID="Table2" style="margin: 0px;">
+    <table border="1" width="100%" ID="Table2" >
         <tr>
             <td th:if="${userused}" align="center" class="alert alert-danger" role="alert" th:text="${userused}"></td>
         </tr>
@@ -47,29 +48,29 @@
     <form th:object="${user}" method="post">
         <div class="form-inline col-md-12">
             <label class="sr-only" th:for="username"></label>
-            <input style="background-color: rgba(100,100, 100, 0.5); color:rgba(255,255,255,.8)" th:field="*{username}" class="form-control mb-5 mr-sm-5 mb-sm-0" placeholder="League Name"/>
+            <input id="input_70c2_0" th:field="*{username}" class="form-control mb-5 mr-sm-5 mb-sm-0" placeholder="League Name"/>
             <label  class="sr-only" th:for="password"></label>
-            <input style="background-color: rgba(100,100, 100, 0.5); color:rgba(255,255,255,.8)" th:field="*{password}" type="password" class="form-control mb-5 mr-sm-5 mb-sm-0" placeholder="Password"/>
+            <input id="input_70c2_1" th:field="*{password}" type="password" class="form-control mb-5 mr-sm-5 mb-sm-0" placeholder="Password"/>
             <label  class="sr-only" th:for="userRank"></label>
-            <select style="background-color: rgba(100,100, 100, 0.5); color:rgba(255,255,255,.8)" th:name="userRankId" class="form-control mb-2 mr-sm-5 mb-sm-0">
+            <select id="select_70c2_0" th:name="userRankId" class="form-control mb-2 mr-sm-5 mb-sm-0">
                 <option  th:each="rank : ${userranks}"
-                        th:text="${rank.name}"
-                        th:value="${rank.id}"></option>
+                         th:text="${rank.name}"
+                         th:value="${rank.id}"></option>
             </select>
             <label th:for="role"></label>
-            <select style="background-color: rgba(100,100, 100, 0.5);color:rgba(255,255,255,.8)" th:name="roleId" class="form-control mb-2 mr-sm-5 mb-sm-0">
+            <select id="select_70c2_1" th:name="roleId" class="form-control mb-2 mr-sm-5 mb-sm-0">
                 <option th:each="role : ${roles}"
                         th:text="${role.name}"
                         th:value="${role.id}"></option>
             </select>
             <label th:for="server"></label>
-            <select style="background-color: rgba(100,100, 100, 0.5);color:rgba(255,255,255,.8)" th:name="serverId" class="form-control mb-2 mr-sm-5 mb-sm-0">
+            <select id="select_70c2_2" th:name="serverId" class="form-control mb-2 mr-sm-5 mb-sm-0">
                 <option th:each="server : ${servers}"
                         th:text="${server.name}"
                         th:value="${server.id}"></option>
             </select>
             <label th:for="type"></label>
-            <select style="background-color: rgba(100,100, 100, 0.5);color:rgba(255,255,255,.8)" th:name="userTypeId" class="form-control mb-2 mr-sm-5 mb-sm-0">
+            <select id="select_70c2_3" th:name="userTypeId" class="form-control mb-2 mr-sm-5 mb-sm-0">
                 <option th:each="userType : ${types}"
                         th:text="${userType.name}"
                         th:value="${userType.id}"></option>
@@ -77,30 +78,30 @@
         </div>
         <div class="container-fluid text-center mt-lg-3">
             <label th:for="opGGLink"><h4>OP.GG Link</h4></label>
-            <input style="background-color: rgba(100,100, 100, 0.5);color:rgba(255,255,255,.8)" th:field="*{opGGLink}" class="form-control"/>
+            <input id="input_70c2_2" th:field="*{opGGLink}" class="form-control"/>
         </div>
         <div class="container-fluid text-center mt-lg-3">
             <label th:for="discordLink"><h4>Discord Link</h4></label>
-            <input style="background-color: rgba(100,100, 100, 0.5);color:rgba(255,255,255,.8)" th:field="*{discordLink}" class="form-control"/>
+            <input id="input_70c2_3" th:field="*{discordLink}" class="form-control"/>
         </div>
         <div class="container-fluid text-center mt-lg-3">
             <label th:for="aboutMe"><h4>About Me (availability, when you play, etc.)</h4></label>
-            <textarea style="background-color: rgba(100,100, 100, 0.5);color:rgba(255,255,255,.8)" th:field="*{aboutMe}" class="form-control" rows="5"/>
+            <textarea id="textarea_70c2_0" th:field="*{aboutMe}" class="form-control" rows="5"/>
         </div>
 
         <div class="container-fluid text-center mt-lg-3">
             <label th:for="mainchamp"><h4>Most Played Champs</h4></label>
-            <select style="background-color: rgba(100,100, 100, 0.5);color:rgba(255,255,255,.8)" th:name="mainChampId" class="form-control">
+            <select id="select_70c2_4" th:name="mainChampId" class="form-control">
                 <option th:each="champ : ${mainchamps}"
                         th:text="${champ.name}"
                         th:value="${champ.id}"></option>
             </select>
-            <select style="background-color: rgba(100,100, 100, 0.5);color:rgba(255,255,255,.8)" th:name="mainChampId" class="form-control mt-lg-2">
+            <select id="select_70c2_5" th:name="mainChampId" class="form-control mt-lg-2">
                 <option th:each="champ : ${mainchamps}"
                         th:text="${champ.name}"
                         th:value="${champ.id}"></option>
             </select>
-            <select  style="background-color: rgba(100,100, 100, 0.5);color:rgba(255,255,255,.8)" th:name="mainChampId" class="form-control mt-lg-2">
+            <select  id="select_70c2_6" th:name="mainChampId" class="form-control mt-lg-2">
                 <option th:each="champ : ${mainchamps}"
                         th:text="${champ.name}"
                         th:value="${champ.id}"></option>
