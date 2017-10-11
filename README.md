@@ -1,5 +1,9 @@
 <h3>Live @ https://climblol.herokuapp.com/</h3>
 
+<h3>About</h3>
+
+<p>Built with Java, using SpringBoot, Gradle, and a Mysql database on the backed. On the front end it uses HTML, CSS, and BootStrap</p>
+
 <h3>==========Routes==========</h3>
 <p> /home - landing page explanation of the site and links to the other pages</p>
 <p> /register - make a new profile, redirects to your profile if you put in valid data.</p>
