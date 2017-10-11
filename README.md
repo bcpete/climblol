@@ -1,6 +1,6 @@
 <h3>Live @ https://climblol.herokuapp.com/</h3>
 
-<h3>About</h3>
+<h3>==========About==========</h3>
 
 <p>Built with Java, using SpringBoot, Gradle, and a Mysql database on the backed. On the front end it uses HTML, CSS, and BootStrap</p>
 
