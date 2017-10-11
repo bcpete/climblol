@@ -1,7 +1,5 @@
 <h3>Live @ https://climblol.herokuapp.com/</h3>
 
-Social media site for finding friends to play League of Legends with, or finding a coach to improve.
-
 <h3>==========Routes==========</h3>
 <p> /home - landing page explanation of the site and links to the other pages</p>
 <p> /register - make a new profile, redirects to your profile if you put in valid data.</p>
